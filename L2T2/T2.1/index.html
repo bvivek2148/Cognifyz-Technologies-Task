@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Responsive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="animated-header">
+        <h1><span class="highlight">Interactive</span> Website</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="services.html" class="nav-link"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h2 class="animated-title">Welcome to Our Creative Space</h2>
+            <p class="subtitle">Discover amazing interactive experiences</p>
+            
+            <div class="search-container">
+                <input type="text" placeholder="Search our services..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Update card buttons with proper links -->
+            <div class="card-container">
+                <div class="card interactive-card">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Innovation Hub</h3>
+                    <p>Explore cutting-edge solutions</p>
+                    <button class="card-btn" onclick="window.location.href='innovation.html'">Learn More</button>
+                </div>
+                <div class="card interactive-card">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Creative Studio</h3>
+                    <p>Design your future with us</p>
+                    <button class="card-btn" onclick="window.location.href='creative.html'">Discover</button>
+                </div>
+                <div class="card interactive-card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Growth Lab</h3>
+                    <p>Scale your potential</p>
+                    <button class="card-btn" onclick="window.location.href='growth.html'">Explore</button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Quick Access <i class="fas fa-bolt"></i></h3>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%"></div>
+                </div>
+                <span>Project Progress</span>
+            </div>
+            <ul class="feature-list">
+                <li><a href="#" class="feature-link"><i class="fas fa-star"></i> Featured</a></li>
+                <li><a href="#" class="feature-link"><i class="fas fa-fire"></i> Trending</a></li>
+                <li><a href="#" class="feature-link"><i class="fas fa-clock"></i> Recent</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>Interactive Website. All rights reserved.</p>
+                      <p class="author">By vivek</p>
+            </div>
+            <div class="scroll-top">
+                <button id="scrollTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
