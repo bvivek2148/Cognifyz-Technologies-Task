@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="title-section">
+                <h1><i class="fas fa-images"></i> Interactive Gallery</h1>
+            </div>
+            <nav class="navigation">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="nature">Nature</button>
+                    <button class="filter-btn" data-filter="urban">Urban</button>
+                    <button class="filter-btn" data-filter="art">Art</button>
+                    <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+                    <button class="filter-btn" data-filter="architecture">Architecture</button>
+                </div>
+            </nav>
+        </div>
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search images...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="view-toggle">
+                <button class="grid-view active"><i class="fas fa-th"></i></button>
+                <button class="list-view"><i class="fas fa-list"></i></button>
+            </div>
+            <!-- Add favorites button -->
+            <div class="favorites-toggle">
+                <button class="favorites-btn" title="View Favorites">
+                    <i class="fas fa-heart"></i>
+                    <span class="favorites-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="gallery">
+        <!-- Update each gallery-item to include a data-id attribute -->
+        <div class="gallery-item" data-category="nature" data-tags="nature,landscape,mountains" data-id="img1">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=1" alt="Mountain Landscape" loading="lazy">
+                <div class="overlay">
+                    <h3>Mountain Vista</h3>
+                    <p>Majestic mountain peaks at sunrise</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Nature</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="urban" data-tags="urban,city,architecture">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=2" alt="City Skyline" loading="lazy">
+                <div class="overlay">
+                    <h3>Urban Dreams</h3>
+                    <p>Modern city skyline at dusk</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Urban</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="art" data-tags="art,abstract,modern">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=3" alt="Abstract Art" loading="lazy">
+                <div class="overlay">
+                    <h3>Abstract Harmony</h3>
+                    <p>Contemporary abstract expression</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Art</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="wildlife" data-tags="wildlife,animals,nature">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=4" alt="Wildlife Photo" loading="lazy">
+                <div class="overlay">
+                    <h3>Wild Spirit</h3>
+                    <p>Wildlife in their natural habitat</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Wildlife</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="architecture" data-tags="architecture,building,design">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=5" alt="Architecture" loading="lazy">
+                <div class="overlay">
+                    <h3>Architectural Wonder</h3>
+                    <p>Modern architectural masterpiece</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Architecture</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="nature" data-tags="nature,ocean,beach">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=6" alt="Ocean View" loading="lazy">
+                <div class="overlay">
+                    <h3>Ocean Serenity</h3>
+                    <p>Peaceful ocean waves at sunset</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Nature</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="urban" data-tags="urban,night,city">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=7" alt="Night City" loading="lazy">
+                <div class="overlay">
+                    <h3>Night Lights</h3>
+                    <p>City illuminated in the darkness</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Urban</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="wildlife" data-tags="wildlife,birds,nature">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=8" alt="Bird Photography" loading="lazy">
+                <div class="overlay">
+                    <h3>Wings of Freedom</h3>
+                    <p>Majestic birds in flight</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Wildlife</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="architecture" data-tags="architecture,historical,ancient">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=9" alt="Historical Architecture" loading="lazy">
+                <div class="overlay">
+                    <h3>Ancient Grandeur</h3>
+                    <p>Historical architectural marvel</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Architecture</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="art" data-tags="art,painting,modern">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=10" alt="Modern Art" loading="lazy">
+                <div class="overlay">
+                    <h3>Modern Expression</h3>
+                    <p>Contemporary artistic vision</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Art</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="nature" data-tags="nature,forest,trees">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=11" alt="Forest View" loading="lazy">
+                <div class="overlay">
+                    <h3>Forest Mystery</h3>
+                    <p>Deep within the ancient woods</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Nature</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-category="urban" data-tags="urban,street,people">
+            <div class="image-wrapper">
+                <img src="https://picsum.photos/400/400?random=12" alt="Street Life" loading="lazy">
+                <div class="overlay">
+                    <h3>Urban Life</h3>
+                    <p>Daily life in the city streets</p>
+                    <div class="icons">
+                        <i class="fas fa-expand" title="Expand"></i>
+                        <i class="fas fa-heart" title="Like"></i>
+                        <i class="fas fa-share" title="Share"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="category"><i class="fas fa-tag"></i> Urban</span>
+                <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+            </div>
+        </div>
+
+        <!-- After your existing gallery items, add these new items -->
+                <div class="gallery-item" data-category="wildlife" data-tags="wildlife,safari,animals">
+                    <div class="image-wrapper">
+                        <img src="https://picsum.photos/400/400?random=13" alt="Safari Adventure" loading="lazy">
+                        <div class="overlay">
+                            <h3>Safari Adventure</h3>
+                            <p>Wild animals in their natural habitat</p>
+                            <div class="icons">
+                                <i class="fas fa-expand" title="Expand"></i>
+                                <i class="fas fa-heart" title="Like"></i>
+                                <i class="fas fa-share" title="Share"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <span class="category"><i class="fas fa-tag"></i> Wildlife</span>
+                        <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Continue adding more items with incremental random numbers -->
+                <!-- Adding items 14-40 with varied categories -->
+
+                <div class="gallery-item" data-category="architecture" data-tags="architecture,modern,design">
+                    <div class="image-wrapper">
+                        <img src="https://picsum.photos/400/400?random=14" alt="Modern Design" loading="lazy">
+                        <div class="overlay">
+                            <h3>Modern Masterpiece</h3>
+                            <p>Contemporary architectural brilliance</p>
+                            <div class="icons">
+                                <i class="fas fa-expand" title="Expand"></i>
+                                <i class="fas fa-heart" title="Like"></i>
+                                <i class="fas fa-share" title="Share"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <span class="category"><i class="fas fa-tag"></i> Architecture</span>
+                        <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Continue with more items following the same pattern -->
+                <!-- Adding variations for each category -->
+
+                <div class="gallery-item" data-category="nature" data-tags="nature,waterfall,landscape">
+                    <div class="image-wrapper">
+                        <img src="https://picsum.photos/400/400?random=15" alt="Waterfall" loading="lazy">
+                        <div class="overlay">
+                            <h3>Cascading Beauty</h3>
+                            <p>Majestic waterfall in pristine forest</p>
+                            <div class="icons">
+                                <i class="fas fa-expand" title="Expand"></i>
+                                <i class="fas fa-heart" title="Like"></i>
+                                <i class="fas fa-share" title="Share"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-info">
+                        <span class="category"><i class="fas fa-tag"></i> Nature</span>
+                        <span class="likes"><i class="fas fa-heart"></i> <span class="like-count">0</span></span>
+                    </div>
+                </div>
+
+                <!-- Continue adding more items... -->
+                <!-- Would you like me to continue with the remaining items? -->
+    </div>
+
+    <div class="modal" id="imageModal">
+        <div class="modal-header">
+            <button class="back-btn" title="Go Back"><i class="fas fa-arrow-left"></i></button>
+            <span class="close-btn" title="Close">&times;</span>
+        </div>
+        <button class="nav-btn prev-btn" title="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn next-btn" title="Next"><i class="fas fa-chevron-right"></i></button>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption">
+            <h3></h3>
+            <p></p>
+            <div class="modal-icons">
+                <i class="fas fa-heart" title="Like"></i>
+                <i class="fas fa-share" title="Share"></i>
+                <i class="fas fa-download" title="Download"></i>
+                <i class="fas fa-info-circle" title="Image Info"></i>
+            </div>
+            <div class="image-details">
+                <p class="category"></p>
+                <p class="likes"></p>
+                <p class="uploaded"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+    </div>
+
+    <div class="toast-notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Slideshow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="slideshow-wrapper">
+        <div class="title-container">
+            <div class="title-decoration"></div>
+            <h1>Amazing Image Gallery</h1>
+            <div class="title-decoration"></div>
+        </div>
+        <div class="slideshow-container">
+            <div class="slide fade active">
+                <img src="https://picsum.photos/800/400?random=1" alt="Nature">
+                <div class="caption">Beautiful Nature</div>
+            </div>
+            <div class="slide fade">
+                <img src="https://picsum.photos/800/400?random=2" alt="Architecture">
+                <div class="caption">Modern Architecture</div>
+            </div>
+            <div class="slide fade">
+                <img src="https://picsum.photos/800/400?random=3" alt="Technology">
+                <div class="caption">Future Technology</div>
+            </div>
+            <div class="slide fade">
+                <img src="https://picsum.photos/800/400?random=4" alt="Ocean">
+                <div class="caption">Deep Ocean</div>
+            </div>
+            <div class="slide fade">
+                <img src="https://picsum.photos/800/400?random=5" alt="Space">
+                <div class="caption">Outer Space</div>
+            </div>
+            <div class="slide fade">
+                <img src="https://picsum.photos/800/400?random=6" alt="Wildlife">
+                <div class="caption">Wild Animals</div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></a>
+            <a class="next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar"></div>
+        
+        <!-- Image Counter -->
+        <div class="counter">
+            <span id="current">1</span>/<span id="total">6</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
