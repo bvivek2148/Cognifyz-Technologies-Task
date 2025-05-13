@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Internship - Cognifyz Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <img src="logo.png" alt="Cognifyz Technologies Logo" class="nav-logo">
+        <button class="menu-toggle">☰</button>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#internships">Internships</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-particles">
+            <div class="header-particle" style="top: 20%; left: 10%;"></div>
+            <div class="header-particle" style="top: 60%; left: 30%;"></div>
+            <div class="header-particle" style="top: 40%; left: 70%;"></div>
+            <div class="header-particle" style="top: 80%; left: 50%;"></div>
+            <div class="header-particle" style="top: 30%; left: 90%;"></div>
+        </div>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Transform Your Career in Tech</h1>
+                <p class="header-subtitle">Join Our Elite Web Development Program</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Join Our Dynamic Team</h2>
+            <p>Embark on a 3-month journey of learning and growth with Cognifyz Technologies. Our internship program offers hands-on experience in web development, allowing you to work on real projects while learning from industry experts.</p>
+        </section>
+
+        <section class="highlights">
+            <div class="highlight-card">
+                <h2>Real-World Experience</h2>
+                <p>Work on actual projects for real clients, building your portfolio while gaining valuable industry experience.</p>
+            </div>
+            <div class="highlight-card">
+                <h2>Expert Mentorship</h2>
+                <p>Learn directly from experienced developers who will guide you through best practices and industry standards.</p>
+            </div>
+            <div class="highlight-card">
+                <h2>Career Growth</h2>
+                <p>Opportunity for full-time employment based on performance and mutual fit.</p>
+            </div>
+        </section>
+
+        <section class="qualifications">
+            <h2>Required Qualifications</h2>
+            <ul>
+                <li>Strong foundation in HTML, CSS, and JavaScript</li>
+                <li>Basic understanding of React.js or similar frameworks</li>
+                <li>Knowledge of version control systems (Git)</li>
+                <li>Good problem-solving skills</li>
+                <li>Excellent communication abilities</li>
+                <li>Currently pursuing or recently graduated in Computer Science or related field</li>
+            </ul>
+        </section>
+
+        <section class="cta">
+            <a href="#" class="cta-button">Apply Now</a>
+        </section>
+    </div>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Email: careers@cognifyz.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 123 Tech Street, Innovation City, IN 12345</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const navLinksContainer = document.querySelector('.nav-links');
+    
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', () => {
+                navLinksContainer.classList.toggle('active');
+            });
+    
+            // Show home content by default
+            document.getElementById('home').classList.add('active');
+    
+            // Tab switching with smooth transitions
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all tabs and links
+                    tabContents.forEach(tab => tab.classList.remove('active'));
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link and corresponding tab
+                    link.classList.add('active');
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetTab = document.getElementById(targetId);
+                    
+                    if (targetTab) {
+                        // Small delay for smooth transition
+                        setTimeout(() => {
+                            targetTab.classList.add('active');
+                        }, 50);
+                    }
+                });
+            });
+    
+            // Add hover effect to course cards
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${(y - rect.height/2)/20}deg) rotateY(${-(x - rect.width/2)/20}deg)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                });
+            });
+        });
+    </script>
+
+    <div class="tab-content" id="home">
+        <div class="container">
+            <section class="intro">
+                <h2>Join Our Dynamic Team</h2>
+                <p>Embark on a 3-month journey of learning and growth with Cognifyz Technologies. Our internship program offers hands-on experience in web development, allowing you to work on real projects while learning from industry experts.</p>
+            </section>
+
+            <section class="highlights">
+                <div class="highlight-card">
+                    <h2>Real-World Experience</h2>
+                    <p>Work on actual projects for real clients, building your portfolio while gaining valuable industry experience.</p>
+                </div>
+                <div class="highlight-card">
+                    <h2>Expert Mentorship</h2>
+                    <p>Learn directly from experienced developers who will guide you through best practices and industry standards.</p>
+                </div>
+                <div class="highlight-card">
+                    <h2>Career Growth</h2>
+                    <p>Opportunity for full-time employment based on performance and mutual fit.</p>
+                </div>
+            </section>
+
+            <section class="qualifications">
+                <h2>Required Qualifications</h2>
+                <ul>
+                    <li>Strong foundation in HTML, CSS, and JavaScript</li>
+                    <li>Basic understanding of React.js or similar frameworks</li>
+                    <li>Knowledge of version control systems (Git)</li>
+                    <li>Good problem-solving skills</li>
+                    <li>Excellent communication abilities</li>
+                    <li>Currently pursuing or recently graduated in Computer Science or related field</li>
+                </ul>
+            </section>
+
+            <section class="cta">
+                <a href="#" class="cta-button">Apply Now</a>
+            </section>
+        </div>
+    </div>
+
+    <div class="tab-content" id="courses">
+        <div class="container">
+            <h2 class="section-title">Our Learning Paths</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-icon">🌐</div>
+                    <h3>Full Stack Development</h3>
+                    <p>Master both frontend and backend development with our comprehensive program.</p>
+                    <ul class="course-features">
+                        <li>React & Node.js</li>
+                        <li>Database Design</li>
+                        <li>API Development</li>
+                    </ul>
+                    <span class="duration">16 weeks</span>
+                    <button class="enroll-btn">Learn More</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Create stunning user interfaces and seamless user experiences.</p>
+                    <ul class="course-features">
+                        <li>Figma & Adobe XD</li>
+                        <li>User Research</li>
+                        <li>Prototyping</li>
+                    </ul>
+                    <span class="duration">12 weeks</span>
+                    <button class="enroll-btn">Learn More</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">📱</div>
+                    <h3>Mobile Development</h3>
+                    <p>Build native and cross-platform mobile applications.</p>
+                    <ul class="course-features">
+                        <li>React Native</li>
+                        <li>iOS & Android</li>
+                        <li>App Publishing</li>
+                    </ul>
+                    <span class="duration">14 weeks</span>
+                    <button class="enroll-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2015, Cognifyz Technologies has been at the forefront of technological innovation and education.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Our Mission</h3>
+                    <p>Empowering the next generation of developers with practical skills and real-world experience.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Graduates</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Industry Partners</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Placement Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="internships">
+        <div class="container">
+            <h2 class="section-title">Available Positions</h2>
+            <div class="internship-list">
+                <div class="internship-item">
+                    <div class="internship-details">
+                        <h3>Frontend Developer Intern</h3>
+                        <p>Create responsive and interactive web applications using modern frameworks.</p>
+                        <ul class="requirements">
+                            <li>React/Vue.js experience</li>
+                            <li>Strong JavaScript fundamentals</li>
+                            <li>Eye for design</li>
+                        </ul>
+                        <div class="internship-meta">
+                            <span>📅 3 months</span>
+                            <span>💰 Paid internship</span>
+                            <span>🏢 Hybrid</span>
+                        </div>
+                    </div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-details">
+                        <h3>Backend Developer Intern</h3>
+                        <p>Build scalable server-side applications and RESTful APIs.</p>
+                        <ul class="requirements">
+                            <li>Node.js/Python experience</li>
+                            <li>Database knowledge</li>
+                            <li>API design skills</li>
+                        </ul>
+                        <div class="internship-meta">
+                            <span>📅 3 months</span>
+                            <span>💰 Paid internship</span>
+                            <span>🏢 Remote</span>
+                        </div>
+                    </div>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="icon">📧</span>
+                            <p>careers@cognifyz.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📱</span>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <p>123 Tech Street, Innovation City, IN 12345</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <select>
+                        <option value="">Select Interest</option>
+                        <option value="internship">Internship</option>
+                        <option value="course">Course</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
